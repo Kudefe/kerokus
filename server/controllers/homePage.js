@@ -1,7 +1,9 @@
 const homePage = {}
 
 homePage.get = (req, res) => {
-  res.send("funcionando")
+  res.render('home', {
+    title:"funcionando!!!"
+  })
 }
 
 export default homePage
