@@ -10,8 +10,17 @@ import bodyParser from 'body-parser'
 import session from 'express-session'
 import flash from 'express-flash-2'
 
-mongoose.connect('mongodb://localhost:27017/templatedb', () => {
-  console.log('conectado a mongo!');
+mongoose.connect('mongodb://localhost/gamekb')
+let db = mongoose.connection
+
+//check connection
+db.once('open', ()  => {
+  console.log('conectado a mongoDB');
+})
+
+//check for db errors
+db.on('error', (err) => {
+  console.log(err);
 })
 
 const app = express()
@@ -35,16 +44,16 @@ app.use(flash());
 
 app.get('/flash', (req, res) => {
   res.flash('info', 'no se que chucha!')
-  res.redirect('/')
+  res.redirect('/games')
 })
 
 app.get('/no-flash', (req, res) => {
-  res.redirect('/')
+  res.redirect('/games')
 })
 
 app.get('/otro', (req, res) => {
   res.flash('info', 'soy otro flash')
-  res.redirect('/')
+  res.redirect('/games')
 })
 
 app.use('/', routes)

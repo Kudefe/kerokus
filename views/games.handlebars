@@ -1,0 +1,17 @@
+<p>Juegos aqui!</p>
+<div>
+  {{title}}
+</div>
+<div>
+  {{#each games}}
+    <p>{{this.title}}</p>
+  {{/each}}
+</div>
+<hr>
+<div>
+  <a href="/flash">Flash!</a>
+  <a href="/no-flash">No Flash!</a>
+  {{#if flash.info}}
+    <p>{{flash.info}}</p>
+  {{/if}}
+</div>
