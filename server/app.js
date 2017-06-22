@@ -10,7 +10,7 @@ import bodyParser from 'body-parser'
 import session from 'express-session'
 import flash from 'express-flash-2'
 
-mongoose.connect('mongodb://localhost/gamekb')
+mongoose.connect('mongodb://localhost/otradbkb')
 let db = mongoose.connection
 
 //check connection
@@ -29,6 +29,15 @@ app.set('views', __dirname + './../views')
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
+//set public folder
+app.use(express.static(path.join(__dirname, './../public')))
 
 app.use(logger('dev'))
 

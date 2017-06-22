@@ -12,7 +12,6 @@ gamePage.get = (req, res) => {
         title: 'Add Game',
         games: games
       })
-      console.log(games);
     }
   })
 }
