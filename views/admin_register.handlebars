@@ -1,0 +1,34 @@
+<div>
+  <form action="/admin/register" method="post">
+    <div>
+      <label for="nombre">Nombre</label>
+      <input type="text" name="name" value="">
+    </div>
+    <div>
+      <label for="username">Username</label>
+      <input type="text" name="username" value="">
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="text" name="email" value="">
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" value="">
+    </div>
+    <div>
+      <label for="password">Confirm Password</label>
+      <input type="password" name="password2" value="">
+    </div>
+    <hr>
+    <input type="submit" name="" value="submit">
+  </form>
+</div>
+<div>
+  {{#if flash.error}}
+    <p>{{flash.error}}</p>
+  {{/if}}
+  {{#if flash.success}}
+    <p>{{flash.success}}</p>
+  {{/if}}
+</div>

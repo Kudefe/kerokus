@@ -22,3 +22,5 @@ Solo registro de administrador, y solo debe haber una cantidad limitada.
 /admin/login/ acceso con credenciales de administrador
 /admin/add/game => route para añadir nuevo juego
 /admin/add/ad => route para añadir ad de texto
+
+edit tiene que estar en admin. 

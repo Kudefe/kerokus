@@ -1,0 +1,17 @@
+<div>
+  {{games.title}}
+</div>
+<hr>
+<div>
+  {{games.author}}
+</div>
+<hr>
+<div>
+  {{games.body}}
+</div>
+
+<hr>
+<form action="/admin/edit/{{games.id}}">
+    <input type="submit" value="Edit!" />
+</form>
+<input href="#" type="button" name="" value="delete" class="delete-game" data-id={{games.id}} >

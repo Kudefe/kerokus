@@ -9,8 +9,11 @@ import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
 import session from 'express-session'
 import flash from 'express-flash-2'
+import expressValidator from 'express-validator'
+import config from './../config/database'
+import passport from 'passport'
 
-mongoose.connect('mongodb://localhost/otradbkb')
+mongoose.connect(config.database)
 let db = mongoose.connection
 
 //check connection
@@ -50,6 +53,28 @@ app.use(session({
 }))
 
 app.use(flash());
+
+app.use(expressValidator({
+  errorFormatter: function(param, msg, value) {
+      var namespace = param.split('.')
+      , root    = namespace.shift()
+      , formParam = root;
+
+    while(namespace.length) {
+      formParam += '[' + namespace.shift() + ']';
+    }
+    return {
+      param : formParam,
+      msg   : msg,
+      value : value
+    };
+  }
+}));
+
+require('./../config/passport')(passport)
+//passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get('/flash', (req, res) => {
   res.flash('info', 'no se que chucha!')

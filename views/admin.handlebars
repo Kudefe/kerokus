@@ -1,1 +1,19 @@
-<p>administrador solamente!</p>
+<p>Juegos aqui!</p>
+<div>
+  {{title}}
+</div>
+<div>
+  {{#each games}}
+  <div>
+    <a href="/admin/games/{{this.id}}">{{this.title}}</a>
+  </div>
+  {{/each}}
+</div>
+<hr>
+<div>
+  <a href="/flash">Flash!</a>
+  <a href="/no-flash">No Flash!</a>
+  {{#if flash.info}}
+    <p>{{flash.info}}</p>
+  {{/if}}
+</div>

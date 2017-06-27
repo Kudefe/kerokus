@@ -4,7 +4,9 @@
 </div>
 <div>
   {{#each games}}
-    <p>{{this.title}}</p>
+  <div>
+    <a href="/games/{{this.id}}">{{this.title}}</a>
+  </div>
   {{/each}}
 </div>
 <hr>
@@ -13,5 +15,11 @@
   <a href="/no-flash">No Flash!</a>
   {{#if flash.info}}
     <p>{{flash.info}}</p>
+  {{/if}}
+</div>
+<div>
+
+  {{#if flash.error}}
+    <p>{{flash.error}}</p>
   {{/if}}
 </div>

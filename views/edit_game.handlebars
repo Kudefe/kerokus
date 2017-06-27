@@ -1,0 +1,18 @@
+<div>
+  <form action="/admin/edit/{{games.id}}" method="post">
+    <div>
+      <label for="title">Title</label>
+      <input type="text" name="title" value="{{games.title}}">
+    </div>
+    <div>
+      <label for="author">Author</label>
+      <input type="text" name="author" value="{{games.author}}">
+    </div>
+    <div>
+      <label for="body">Body</label>
+      <textarea name="body" rows="8" cols="80">{{games.body}}</textarea>
+    </div>
+    <hr>
+    <input type="submit" name="" value="edit">
+  </form>
+</div>
