@@ -37,4 +37,14 @@ routes.post('/admin/register', adminRegister.post)
 routes.get('/admin/login', adminLogin.get)
 routes.post('/admin/login', adminLogin.post)
 
+//add game and Ad
+routes.get('/admin/add/game', addGame.get)
+routes.get('/admin/add/ad', addAd.get)
+routes.post('/admin/add/game', addGame.post)
+
+//admin routes
+routes.get('/admin', adminPage.get)
+routes.get('/admin/register', adminRegister.get)
+routes.get('/admin/login', adminLogin.get)
+
 export default routes
