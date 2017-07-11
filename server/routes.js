@@ -19,6 +19,9 @@ import adminAds from './controllers/adminTextAds'
 import blog from './controllers/blog'
 import blogPost from './controllers/blogPost'
 import singlePost from './controllers/singlePost'
+import editPost from './controllers/editBlogPost'
+import adminBlog from './controllers/adminBlog'
+import adminPost from './controllers/adminBlogPost'
 
 
 //TODO Añadir admin/ads y admin/games
@@ -35,6 +38,11 @@ routes.get('/blog', blog.get)
 routes.get('/admin/blog/add', ensureAuth, blogPost.get)
 routes.post('/admin/blog/add', ensureAuth, blogPost.post)
 routes.get('/blog/:id', singlePost.get)
+routes.get('/admin/edit/blog/:id', ensureAuth, editPost.get)
+routes.post('/admin/edit/blog/:id', ensureAuth, editPost.post)
+routes.delete('/admin/blog/:id', editPost.delete)
+routes.get('/admin/blog', ensureAuth, adminBlog.get)
+routes.get('/admin/blog/:id', ensureAuth, adminPost.get)
 
 
 //add game and Ad
@@ -45,6 +53,7 @@ routes.get('/admin/games/:id', ensureAuth, adminGame.get)
 routes.get('/admin/edit/:id', ensureAuth, editGame.get)
 routes.post('/admin/edit/:id', ensureAuth, editGame.post)
 routes.delete('/admin/games/:id', editGame.delete)
+
 
 //admin routes
 routes.get('/admin', ensureAuth, adminPage.get)

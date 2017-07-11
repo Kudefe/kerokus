@@ -1,0 +1,11 @@
+{{#each blogs}}
+  <div>
+    <a href="/admin/blog/{{this.id}}">
+      <p>{{this.title}}</p>
+    </a>
+    <form action="/admin/edit/blog/{{this.id}}">
+        <input type="submit" value="Edit!" />
+    </form>
+    <input href="#" type="button" name="" value="delete" class="delete-blog" blog-id={{this.id}} >
+  </div>
+{{/each}}

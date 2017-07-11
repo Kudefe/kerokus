@@ -27,6 +27,7 @@ editGame.post = (req, res) => {
       res.redirect('/admin')
     }
   })
+  
 }
 
 editGame.delete = (req, res) => {

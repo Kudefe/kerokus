@@ -15,3 +15,20 @@ $(document).ready(() => {
     })
   })
 })
+
+$(document).ready(() => {
+  $('.delete-blog').on('click', (e) => {
+    $target = $(e.target)
+    const id = $target.attr('blog-id')
+    $.ajax({
+      type: 'DELETE',
+      utl: '/admin/blog/'+id,
+      success: (response) => {
+        window.location.href='/admin/blog'
+      },
+      error:(err) => {
+        console.log(err);
+      }
+    })
+  })
+})

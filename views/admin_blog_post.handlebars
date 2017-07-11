@@ -1,0 +1,18 @@
+<div>
+  {{blogs.title}}
+</div>
+<div>
+  {{blogs.author}}
+</div>
+<div>
+  {{blogs.body}}
+</div>
+<hr>
+<div>
+  <form action="/admin/edit/blog/{{blogs.id}}">
+      <input type="submit" value="Edit!" />
+  </form>
+</div>
+<div>
+  <input href="#" type="button" name="" value="delete" class="delete-blog" blog-id={{blogs.id}} >
+</div>
