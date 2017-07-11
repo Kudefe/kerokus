@@ -1,8 +1,8 @@
 <div>
   <form action="/admin/login" method="post">
     <div>
-      <label for="email">Email</label>
-      <input type="text" name="email" value="">
+      <label for="username">Username</label>
+      <input type="text" name="username" value="">
     </div>
     <div>
       <label for="password">Password</label>
@@ -11,4 +11,9 @@
     <hr>
     <input type="submit" name="" value="submit">
   </form>
+</div>
+<div>
+  {{#if flash.error}}
+    <p>{{flash.error}}</p>
+  {{/if}}
 </div>

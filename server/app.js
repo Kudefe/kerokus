@@ -76,6 +76,12 @@ require('./../config/passport')(passport)
 app.use(passport.initialize());
 app.use(passport.session());
 
+//Route global para mandar a todos los views un user
+app.get('*', (req, res, next) => {
+  res.locals.user = req.user || null
+  next()
+})
+
 app.get('/flash', (req, res) => {
   res.flash('info', 'no se que chucha!')
   res.redirect('/games')

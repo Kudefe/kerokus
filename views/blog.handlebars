@@ -1,0 +1,8 @@
+<p>Soy un blog!</p>
+{{#each blogs}}
+  <div>
+    <a href="/blog/{{this.id}}">
+      <p>{{this.title}}</p>
+    </a>
+  </div>
+{{/each}}

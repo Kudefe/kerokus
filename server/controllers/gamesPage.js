@@ -9,9 +9,9 @@ gamePage.get = (req, res) => {
       console.log(err);
     } else {
       res.render('games', {
-        title: 'Add Game',
-        games: games
-      })
+      title: 'Add Game',
+      games: games
+    })
     }
   })
 }

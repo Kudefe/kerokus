@@ -24,6 +24,7 @@ addGame.post = (req, res) => {
     res.flash('success', "juego añadido!")
     let game = new Game()
     game.title = req.body.title
+    // game.title2 = game.title.replace(/\s/g, '_')
     game.author = req.body.author
     game.body = req.body.body
 

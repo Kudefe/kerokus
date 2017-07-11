@@ -1,4 +1,6 @@
 import express from 'express'
+import ensureAuth from './controllers/authenticated/ensure'
+
 
 //import controllers
 import homePage from './controllers/homePage'
@@ -11,40 +13,50 @@ import adminLogin from './controllers/adminLogin'
 import singleGame from './controllers/singleGame'
 import editGame from './controllers/editGame'
 import adminGame from './controllers/adminGame'
+import adminLogout from './controllers/adminLogout'
+import adminInterviews from './controllers/adminInterviews'
+import adminAds from './controllers/adminTextAds'
+import blog from './controllers/blog'
+import blogPost from './controllers/blogPost'
+import singlePost from './controllers/singlePost'
 
 
 //TODO Añadir admin/ads y admin/games
 
 const routes = express()
 
+//main
 routes.get('/', homePage.get)
 routes.get('/games', gamePage.get)
 routes.get('/games/:id', singleGame.get)
 
+//blog y blog posts
+routes.get('/blog', blog.get)
+routes.get('/admin/blog/add', ensureAuth, blogPost.get)
+routes.post('/admin/blog/add', ensureAuth, blogPost.post)
+routes.get('/blog/:id', singlePost.get)
+
+
 //add game and Ad
-routes.get('/admin/add/game', addGame.get)
-routes.get('/admin/add/ad', addAd.get)
-routes.post('/admin/add/game', addGame.post)
-routes.get('/admin/games/:id', adminGame.get)
-routes.get('/admin/edit/:id', editGame.get)
-routes.post('/admin/edit/:id', editGame.post)
+routes.get('/admin/add/game', ensureAuth, addGame.get)
+routes.get('/admin/add/ad', ensureAuth, addAd.get)
+routes.post('/admin/add/game', ensureAuth, addGame.post)
+routes.get('/admin/games/:id', ensureAuth, adminGame.get)
+routes.get('/admin/edit/:id', ensureAuth, editGame.get)
+routes.post('/admin/edit/:id', ensureAuth, editGame.post)
 routes.delete('/admin/games/:id', editGame.delete)
 
 //admin routes
-routes.get('/admin', adminPage.get)
+routes.get('/admin', ensureAuth, adminPage.get)
 routes.get('/admin/register', adminRegister.get)
 routes.post('/admin/register', adminRegister.post)
 routes.get('/admin/login', adminLogin.get)
 routes.post('/admin/login', adminLogin.post)
+routes.get('/admin/:id/logout', adminLogout.get)
+routes.get('/admin/interviews', ensureAuth, adminInterviews.get)
+routes.get('/admin/ads', ensureAuth, adminAds.get)
 
-//add game and Ad
-routes.get('/admin/add/game', addGame.get)
-routes.get('/admin/add/ad', addAd.get)
-routes.post('/admin/add/game', addGame.post)
 
-//admin routes
-routes.get('/admin', adminPage.get)
-routes.get('/admin/register', adminRegister.get)
-routes.get('/admin/login', adminLogin.get)
+
 
 export default routes

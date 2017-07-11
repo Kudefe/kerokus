@@ -2,9 +2,9 @@ import mongoose from 'mongoose'
 import Game from './../models/entrevista'
 import Admin from './../models/admin'
 
-const adminPage = {}
+const adminInterviews = {}
 
-adminPage.get = (req, res) => {
+adminInterviews.get = (req, res) => {
   console.log("pagina de admin");
   Admin.find({}, (err, admin) => {
     if (err) {
@@ -17,7 +17,7 @@ adminPage.get = (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        res.render('admin', {
+        res.render('admin_interviews', {
           title: 'Add Game',
           games: games,
           admin: admin[0]._id
@@ -28,4 +28,4 @@ adminPage.get = (req, res) => {
 }
 
 
-export default adminPage
+export default adminInterviews

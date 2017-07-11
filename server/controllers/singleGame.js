@@ -12,8 +12,18 @@ singleGame.get = (req, res) => {
         games:games
       })
     }
-    console.log(games);
   })
 }
 
 export default singleGame
+
+
+  // Game.find({title2: req.params.title2}, (err, games) => {
+  //   if (err) {
+  //     console.error(err);
+  //   } else {
+  //     res.render('singleGame', {
+  //       games:games
+  //     })
+  //   }
+  // })

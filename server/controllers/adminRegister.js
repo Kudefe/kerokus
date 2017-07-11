@@ -6,8 +6,15 @@ const adminRegister = {}
 
 adminRegister.get = (req, res) => {
   //TODO: if ya hay admin, res.render /login/
+  Admin.find({}, (err, admin) => {
+    if (admin.length <= 0) {
+      res.render('admin_register')
+    } else {
+      res.flash('error', 'Ya existe Admin')
+      res.redirect('/admin/login')
+    }
+  })
 
-  res.render('admin_register')
 }
 
 adminRegister.post = (req, res) => {

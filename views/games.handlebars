@@ -2,13 +2,41 @@
 <div>
   {{title}}
 </div>
-<div>
+
+<hr>
+<div class="container">
   {{#each games}}
-  <div>
-    <a href="/games/{{this.id}}">{{this.title}}</a>
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title">
+        Component
+      </p>
+      <a class="card-header-icon">
+        <span class="icon">
+          <i class="fa fa-angle-down"></i>
+        </span>
+      </a>
+    </header>
+    <div class="card-image">
+   <figure class="image is-128x128">
+     <img class="redonda" src="http://bulma.io/images/placeholders/1280x960.png" alt="Image">
+   </figure>
+ </div>
+<div class="card-content">
+  <div class="content">
+    {{this.body}}
   </div>
+</div>
+<footer class="card-footer">
+  <a class="card-footer-item">Save</a>
+  <a class="card-footer-item">Edit</a>
+  <a class="card-footer-item">Delete</a>
+</footer>
+</div>
   {{/each}}
 </div>
+
+
 <hr>
 <div>
   <a href="/flash">Flash!</a>

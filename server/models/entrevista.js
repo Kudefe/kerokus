@@ -7,6 +7,7 @@ mongoose.Promise = global.Promise
 //en produccion, debo pedir todos los datos requeridos
 const interviewSchema = new Schema({
   title: { type: String, required: true },
+  // title2:{ type: String},
   author: { type: String, required: true },
   body: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
