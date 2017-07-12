@@ -1,0 +1,34 @@
+<div>
+  {{#if user}}
+    <div>
+      <li>
+        <a href="/admin/{{admin}}/logout">Logout</a>
+      </li>
+      <li>
+        <a href="/admin/interviews/">Interviews</a>
+      </li>
+      <li>
+        <a href="/admin/ads/">Ads</a>
+      </li>
+    </div>
+  {{/if}}
+</div>
+<p>Juegos aqui!</p>
+<div>
+  {{title}}
+</div>
+<div>
+  {{#each games}}
+  <div>
+    <a href="/admin/games/{{this.id}}">{{this.title}}</a>
+  </div>
+  {{/each}}
+</div>
+<hr>
+<div>
+  <a href="/flash">Flash!</a>
+  <a href="/no-flash">No Flash!</a>
+  {{#if flash.success}}
+    <p>{{flash.success}}</p>
+  {{/if}}
+</div>
