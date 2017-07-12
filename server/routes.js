@@ -23,6 +23,7 @@ import editPost from './controllers/editBlogPost'
 import adminBlog from './controllers/adminBlog'
 import adminPost from './controllers/adminBlogPost'
 import adminGamePage from './controllers/adminGamesPage'
+import submit from './controllers/submit'
 
 
 
@@ -46,6 +47,9 @@ routes.post('/admin/edit/blog/:id', ensureAuth, editPost.post)
 routes.delete('/admin/blog/:id', editPost.delete)
 routes.get('/admin/blog', ensureAuth, adminBlog.get)
 routes.get('/admin/blog/:id', ensureAuth, adminPost.get)
+
+//submit route
+routes.get('/submit', submit.get)
 
 
 //add game and Ad
