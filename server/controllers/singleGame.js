@@ -4,26 +4,15 @@ import Game from './../models/entrevista'
 const singleGame = {}
 
 singleGame.get = (req, res) => {
-  Game.findById(req.params.id, (err, games) => {
+  Game.findOne({title2: req.params.title2}, (err, games) => {
     if (err) {
-      console.error(err);
+      throw err
     } else {
-      res.render('singleGame', {
+      res.render('single_game', {
         games:games
       })
     }
   })
 }
 
-export default singleGame
-
-
-  // Game.find({title2: req.params.title2}, (err, games) => {
-  //   if (err) {
-  //     console.error(err);
-  //   } else {
-  //     res.render('singleGame', {
-  //       games:games
-  //     })
-  //   }
-  // })
+export default singleGame;

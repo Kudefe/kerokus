@@ -9,6 +9,9 @@ const blogPostSchema = new Schema({
     type: String,
     required: true
   },
+  title2: {
+    type: String
+  },
   body: {
     type: String,
     required: true

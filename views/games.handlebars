@@ -1,17 +1,17 @@
   <div class="ui container  segment">
-    <div class="ui three stackable cards">
+    <div class="ui three stackable link cards">
       {{#each games}}
       <div class="ui red card">
     <div class="content">
       <div class="header">{{this.title}}</div>
     </div>
     <div class="content">
-      <h4 class="ui sub header">this.author</h4>
+      <h4 class="ui sub header">{{this.author}}</h4>
       <div class="ui small feed">
         <div class="event">
           <div class="content">
             <div class="summary">
-               {{this.body}}
+               {{{this.body}}}
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="extra content">
-      <button class="ui button"> <a href="/games/{{this.id}}">Go to interview</a> </button>
+      <button class="ui button"> <a href="/games/{{this.title2}}">Go to interview</a> </button>
     </div>
     </div>
       {{/each}}

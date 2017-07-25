@@ -8,9 +8,12 @@ gamePage.get = (req, res) => {
     if (err) {
       console.log(err);
     } else {
+      
+      let inverted = games.reverse()
+
       res.render('games', {
-      title: 'Add Game',
-      games: games
+      title: 'interviews',
+      games: inverted
     })
     }
   })

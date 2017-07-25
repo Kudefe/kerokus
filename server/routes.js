@@ -24,24 +24,22 @@ import adminBlog from './controllers/adminBlog'
 import adminPost from './controllers/adminBlogPost'
 import adminGamePage from './controllers/adminGamesPage'
 import submit from './controllers/submit'
+import faq from './controllers/faq'
 
 
-
-//TODO Añadir admin/ads y admin/games
-//añadir al main hbs file if user, logout button
 
 const routes = express()
 
 //main
 routes.get('/', homePage.get)
 routes.get('/games', gamePage.get)
-routes.get('/games/:id', singleGame.get)
+routes.get('/games/:title2', singleGame.get)
 
 //blog y blog posts
 routes.get('/blog', blog.get)
 routes.get('/admin/blog/add', ensureAuth, blogPost.get)
 routes.post('/admin/blog/add', ensureAuth, blogPost.post)
-routes.get('/blog/:id', singlePost.get)
+routes.get('/blog/:title2', singlePost.get)
 routes.get('/admin/edit/blog/:id', ensureAuth, editPost.get)
 routes.post('/admin/edit/blog/:id', ensureAuth, editPost.post)
 routes.delete('/admin/blog/:id', editPost.delete)
@@ -50,6 +48,9 @@ routes.get('/admin/blog/:id', ensureAuth, adminPost.get)
 
 //submit route
 routes.get('/submit', submit.get)
+
+//faq
+routes.get('/faq', faq.get)
 
 
 //add game and Ad

@@ -4,12 +4,14 @@ import Blog from './../models/blogPost'
 const singlePost = {}
 
 singlePost.get = (req, res) => {
-  Blog.findById(req.params.id, (err, blogs) => {
+
+  Blog.findOne({title2: req.params.title2}, (err, blogs) => {
     if (err) {
       throw err
     } else {
+      console.log(blogs);
       res.render('single_post', {
-        blogs: blogs
+        blogs:blogs
       })
     }
   })

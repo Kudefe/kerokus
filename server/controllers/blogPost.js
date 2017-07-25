@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 import Blog from './../models/blogPost'
+import slugify from './slugify/slugify'
 
 const blogPost = {}
 
@@ -27,6 +28,9 @@ blogPost.post = (req, res) => {
 
     blog.title = req.body.title
     blog.body = req.body.body
+    blog.title2 = slugify(blog.title);
+
+    console.log(blog.title2);
 
     blog.save((err) => {
       if (err) {
@@ -35,7 +39,7 @@ blogPost.post = (req, res) => {
         res.redirect('/blog')
       }
     })
-  }  
+  }
 }
 
 export default blogPost

@@ -6,17 +6,10 @@
     </div>
     <div>
       <label for="body">Body</label>
-      <textarea name="body" rows="8" cols="80"></textarea>
+      <textarea class="editable" name="body" rows="8" cols="80"></textarea>
     </div>
     <hr>
     <input type="submit" name="" value="submit">
   </form>
 </div>
 <div>
-  {{#if flash.error}}
-    <p>{{flash.error}}</p>
-  {{/if}}
-  {{#if flash.success}}
-    <p>{{flash.success}}</p>
-  {{/if}}
-</div>

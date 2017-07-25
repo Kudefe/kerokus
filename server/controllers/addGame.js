@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 import Game from './../models/entrevista'
+import slugify from './slugify/slugify'
 
 const addGame = {}
 
@@ -24,7 +25,7 @@ addGame.post = (req, res) => {
     res.flash('success', "juego añadido!")
     let game = new Game()
     game.title = req.body.title
-    // game.title2 = game.title.replace(/\s/g, '_')
+    game.title2 = slugify(game.title)
     game.author = req.body.author
     game.body = req.body.body
 
