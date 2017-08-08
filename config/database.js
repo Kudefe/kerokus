@@ -1,4 +1,4 @@
 module.exports = {
-  database: 'mongodb://localhost:27017/otradbkb',
+  database: 'mongodb://kudo:12345@ds019826.mlab.com:19826/gamedevdb',
   secret: 'misecreto'
 }

@@ -1,0 +1,60 @@
+.simple-linear {
+  background: linear-gradient(#e3f2fd , #90caf9);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2em;
+}
+
+.nested{
+  display: grid;
+  grid-auto-rows: minmax(50px, auto);
+}
+
+.renested{
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+.navbar{
+  display: grid;
+  grid-template-columns: repeat:(12, 1fr)
+}
+
+.flow-text{
+  /*width:70% auto;*/
+  /*font-size:12px;*/
+  word-break:break-all;
+}
+
+.centro{
+  text-align: center;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+.pequet{
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+.float {
+  -webkit-transition:all .3s ease-out;
+  -moz-transition:all .3s ease-out;
+  -ms-transition:all .3s ease-out;
+  -o-transition:all .3s ease-out;
+  transition:all .3s ease-out;
+}
+
+.float:hover {
+  -webkit-transform:translate(0px,-10px);
+  -moz-transform:translate(0px,-10px);
+  -ms-transform:translate(0px,-10px);
+  -o-transform:translate(0px,-10px);
+  transform:translate(0px,-10px);
+}

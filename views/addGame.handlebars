@@ -1,20 +1,53 @@
-<div class="ui center aligned container segment">
-  <h2 class="ui header">Submit New Game</h2>
-  <hr>
-  <form class="ui form" action="/admin/add/game" method="post">
-    <div class="field">
-      <label>Game Title</label>
-      <input type="text" name="title" value="" placeholder="Game title">
-    </div>
-    <div class="author">
-      <label>Author</label>
-      <input type="text" name="author" value="" placeholder="Author">
-    </div>
-    <div class="field">
-      <label>Text</label>
-      <textarea name="body" class="editable" rows="8"></textarea>
-    </div>
-    <input class="ui button" type="submit" name="" value="submit">
-  </form>
+<div class="row">
+   <form class="col s12" action="/admin/add/game" method="post">
+     <div class="row">
+       <div class="input-field col s6">
+         <label for="first_name">Game Title</label>
+         <input id="first_name" type="text" class="validate" name="title">
 
-</div>
+       </div>
+       <div class="input-field col s6">
+         <label for="last_name">Author</label>
+         <input id="last_name" type="text" class="validate" name="author" >
+
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="input-field col s2">
+         <label for="last_name">Units</label>
+         <input id="last_name" type="text" class="validate" name="units" >
+       </div>
+       <div class="input-field col s2">
+         <label for="last_name">Company</label>
+         <input id="last_name" type="text" class="validate" name="companyName" >
+       </div>
+       <div class="input-field col s2">
+         <label for="last_name">published</label>
+         <input id="last_name" type="text" class="validate" name="published" >
+       </div>
+       <div class="input-field col s2">
+         <label for="last_name">Image One</label>
+         <input id="last_name" type="text" class="validate" name="imageOne" >
+       </div>
+       <div class="input-field col s2">
+         <label for="last_name">Image Two</label>
+         <input id="last_name" type="text" class="validate" name="imageTwo" >
+       </div>
+     </div>
+
+     <div class="row">
+         <div class="row">
+           <div class="input-field col s12">
+
+             <label for="textarea1"></label>
+
+             <textarea name="body" id="textarea1 editor" class="materialize-textarea"></textarea>
+
+           </div>
+         </div>
+
+     </div>
+     <input class="waves-effect waves-light btn" type="submit" name="" value="submit">
+   </form>
+ </div>
