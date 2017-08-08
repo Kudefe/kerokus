@@ -1,4 +1,4 @@
 module.exports = {
-  database: 'mongodb://kudo:12345@ds019826.mlab.com:19826/gamedevdb',
+  database: 'mongodb://' + process.env.USER + ':' + process.env.PASSDB + '@ds019826.mlab.com:19826/gamedevdb',
   secret: 'misecreto'
 }
