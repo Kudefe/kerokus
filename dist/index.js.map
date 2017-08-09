@@ -1,0 +1,1 @@
+{"version":3,"sources":["../server/index.js"],"names":["listen","req","res","console","log"],"mappings":";;AAAA;;;;;;AAEA,cAAIA,MAAJ,CAAW,IAAX,EAAiB,UAACC,GAAD,EAAMC,GAAN,EAAc;AAC7BC,UAAQC,GAAR,CAAY,aAAZ;AACD,CAFD","file":"index.js","sourcesContent":["import app from './app'\r\n\r\napp.listen(3000, (req, res) => {\r\n  console.log(\"funcionando\");\r\n})\r\n"]}

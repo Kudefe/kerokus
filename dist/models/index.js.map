@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../server/models/index.js"],"names":["Interview"],"mappings":";;;;;;AAAA;;;;;;kBAEe;AACbA;AADa,C","file":"index.js","sourcesContent":["import Interview from './entrevista'\r\n\r\nexport default {\r\n  Interview\r\n}\r\n"]}

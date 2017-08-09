@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../server/controllers/faq.js"],"names":["faq","get","req","res","render"],"mappings":";;;;;AAAA,IAAMA,MAAM,EAAZ;;AAEAA,IAAIC,GAAJ,GAAU,UAACC,GAAD,EAAMC,GAAN,EAAc;AACtBA,MAAIC,MAAJ,CAAW,KAAX;AACD,CAFD;;kBAIeJ,G","file":"faq.js","sourcesContent":["const faq = {}\r\n\r\nfaq.get = (req, res) => {\r\n  res.render('faq')\r\n}\r\n\r\nexport default faq\r\n"]}

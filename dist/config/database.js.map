@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../server/config/database.js"],"names":["module","exports","database","secret"],"mappings":";;AAAAA,OAAOC,OAAP,GAAiB;AACfC,YAAU,uDADK;AAEfC,UAAQ;AAFO,CAAjB","file":"database.js","sourcesContent":["module.exports = {\r\n  database: 'mongodb://kud:12345@ds019826.mlab.com:19826/gamedevdb',\r\n  secret: 'misecreto'\r\n}\r\n"]}

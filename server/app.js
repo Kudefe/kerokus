@@ -10,7 +10,7 @@ import bodyParser from 'body-parser'
 import session from 'express-session'
 import flash from 'express-flash-2'
 import expressValidator from 'express-validator'
-import config from './../config/database'
+import config from './config/database'
 import passport from 'passport'
 
 mongoose.connect(config.database)
@@ -71,7 +71,7 @@ app.use(expressValidator({
   }
 }));
 
-require('./../config/passport')(passport)
+require('./config/passport')(passport)
 //passport middleware
 app.use(passport.initialize());
 app.use(passport.session());

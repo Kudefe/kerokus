@@ -1,10 +1,10 @@
 const LocalStrategy = require('passport-local').Strategy
-import Admin from './../server/models/admin'
+import Admin from './../models/admin'
 import config from './database'
 import bcrypt from 'bcryptjs'
 
 module.exports = function(passport){
-  //TODO añadir email en login strategy. Remover username. 
+  //TODO añadir email en login strategy. Remover username.
   // Local Strategy
   passport.use(new LocalStrategy(function(username, password, done){
     // Match Username
