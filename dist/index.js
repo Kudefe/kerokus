@@ -6,7 +6,9 @@ var _app2 = _interopRequireDefault(_app);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_app2.default.listen(3000, function (req, res) {
+var port = process.env.port || 3000;
+
+_app2.default.listen(port, function (req, res) {
   console.log("funcionando");
 });
 //# sourceMappingURL=index.js.map
